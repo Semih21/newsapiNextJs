@@ -42,4 +42,3 @@ Home.getInitialProps = async function() {
 
 
 export default Home
-//d94efa04117b41ddaeb36bffcb564496  //api key for news
