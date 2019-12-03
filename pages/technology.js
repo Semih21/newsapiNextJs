@@ -3,7 +3,7 @@ import Layout from '../components/Layout'
 import fetch from 'isomorphic-unfetch';
 
 
-const Home = (props) => (
+const Technology = (props) => (
   <div>
  <Layout>
  <div class="row">
@@ -29,8 +29,8 @@ const Home = (props) => (
 
   </div>
 )
-Home.getInitialProps = async function() {
-  const res = await fetch('https://newsapi.org/v2/top-headlines?country=nl&apiKey=d94efa04117b41ddaeb36bffcb564496');
+Technology.getInitialProps = async function() {
+  const res = await fetch('https://newsapi.org/v2/top-headlines?country=nl&category=technology&apiKey=d94efa04117b41ddaeb36bffcb564496');
   const data = await res.json();
 
   
@@ -41,5 +41,4 @@ Home.getInitialProps = async function() {
 };
 
 
-export default Home
-//d94efa04117b41ddaeb36bffcb564496  //api key for news
+export default Technology

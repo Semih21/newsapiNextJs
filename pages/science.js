@@ -3,7 +3,7 @@ import Layout from '../components/Layout'
 import fetch from 'isomorphic-unfetch';
 
 
-const Home = (props) => (
+const Science = (props) => (
   <div>
  <Layout>
  <div class="row">
@@ -15,7 +15,7 @@ const Home = (props) => (
         <div class="card-image">
           <img src={article.urlToImage}/>
           <span class="card-title">{article.title}</span>
-          <a href={article.url} class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+          <a  href={article.url} class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
         </div>
         <div class="card-content">
           <p>{article.content}</p>
@@ -29,8 +29,8 @@ const Home = (props) => (
 
   </div>
 )
-Home.getInitialProps = async function() {
-  const res = await fetch('https://newsapi.org/v2/top-headlines?country=nl&apiKey=d94efa04117b41ddaeb36bffcb564496');
+Science.getInitialProps = async function() {
+  const res = await fetch('https://newsapi.org/v2/top-headlines?country=nl&category=science&apiKey=d94efa04117b41ddaeb36bffcb564496');
   const data = await res.json();
 
   
@@ -41,5 +41,4 @@ Home.getInitialProps = async function() {
 };
 
 
-export default Home
-//d94efa04117b41ddaeb36bffcb564496  //api key for news
+export default Science

@@ -1,56 +1,32 @@
-import React from 'react'
-import Link from 'next/link'
+import Head from "next/head"
+import Link from "next/link"
 
-const links = [
-  { href: 'https://zeit.co/now', label: 'ZEIT' },
-  { href: 'https://github.com/zeit/next.js', label: 'GitHub' },
-].map(link => {
-  link.key = `nav-link-${link.href}-${link.label}`
-  return link
-})
+const Nav=()=>{
 
-const Nav = () => (
-  <nav>
-    <ul>
-      <li>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-      </li>
-      {links.map(({ key, href, label }) => (
-        <li key={key}>
-          <a href={href}>{label}</a>
-        </li>
-      ))}
-    </ul>
-
-    <style jsx>{`
-      :global(body) {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
-          Helvetica, sans-serif;
-      }
-      nav {
-        text-align: center;
-      }
-      ul {
-        display: flex;
-        justify-content: space-between;
-      }
-      nav > ul {
-        padding: 4px 16px;
-      }
-      li {
-        display: flex;
-        padding: 6px 8px;
-      }
-      a {
-        color: #067df7;
-        text-decoration: none;
-        font-size: 13px;
-      }
-    `}</style>
+    return(
+        <div>
+            <Head>
+                <title>Semih's Page</title>
+               <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+            </Head>
+            <nav>
+    <div class="nav-wrapper">
+      <Link href="/"><a class="brand-logo" >News</a></Link>
+    
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li>  <Link href="/"><a >Home</a></Link></li>
+          <li> <Link href="/technology"><a >Technology</a></Link></li>
+          <li>  <Link href="/health"><a >Health</a></Link></li>
+          <li>  <Link href="/sports"><a >Sports</a></Link></li>
+          <li>  <Link href="/business"><a >Business</a></Link></li>
+          <li>  <Link href="/entertainment"><a >Entertainment</a></Link></li>
+          <li>  <Link href="/science"><a >Science</a></Link></li>
+        
+     
+      </ul>
+    </div>
   </nav>
-)
-
-export default Nav
+        </div>
+    )
+}
+export default Nav;
